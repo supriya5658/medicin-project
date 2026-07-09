@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=Device-width, initial-scale=0.5">
+   <title>PHARMAX</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="product_main.css"/>
+
+</head>
+<body>
+   <header>
+      <!--Navbar start-->
+      <div class="navbar ">
+         <div class="nav-logo border">
+            <div class="logo"></div>
+         </div>
+          
+
+         <div class="nav-search">
+            
+            <input placeholder="Search Meds" class="search-input">
+            <div class="search-icon">
+               <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+         </div>   
+          
+         <li class="nav-link"><a href="#" class="active">Home</a></li>
+         
+         <li class="nav-link"><a href="prescription.html">Perscription</a></li>
+         
+     
+         
+         <label for="show" class="login-label">Login</label>  
+         <a > <button class="cart-symbol" > <i class="fa-solid fa-cart-shopping"> <span id="cart-count">0</span></i></button>
+         </a>
+       
+            
+          </div>
+          <!--navbar end-->
+           <!-- ................        Add to cart section     ..................-->
+         
+         <!-- Sidebar -->
+   <div class="sidebar">
+     <h2>Shopping Cart</h2>
+     <div id="cart-items">
+      
+     </div>
+     <div class="total-price" id="total-price">Total: 0.00 Rs</div>
+     <div class="cart-buttons">
+     <button class="close-cart-btn" onclick="closeCart()">Close Cart</button> 
+     <a href="pract1.html"> <button class="checkout-btn">Checkout</button></a>
+   </div>
+
+        <!-- ......................Login form .......................-->
+<div class="popup" id="loginPopup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('loginPopup')">&times;</span>
+        <h2>Login Form</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <p class="signup-link">Don't have an account? <a  onclick="openPopup('signupPopup')">Sign up</a></p>
+        </form>
+    </div>
+</div>
+<!-- ............................Sign up Form .........................-->
+
+<div class="popup" id="signupPopup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('signupPopup')">&times;</span>
+        <h2>Sign Up Form</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+            <p class="signup-link"> Do you have an account? <a  onclick="openPopup('loginPopup')">Login </a></p>
+        </form>
+    </div>
+</div>
+
+</header>
+<div class="container">
+    <div class="product-images" id="angleImages">
+        <!-- Different angle photos of the product -->
+        <img src="okacet_ang1.jpg" alt="Product Angle 1" onclick="changeMainImage('okacet_ang1.jpg')">
+        <img src="okacet_ang2.jpg" alt="Product Angle 2" onclick="changeMainImage('okacet_ang2.jpg')">
+        <img src="okacet_ang3.jpg" alt="Product Angle 2" onclick="changeMainImage('okacet_ang3.jpg')">
+        <img src="okacet.png" alt="Product Angle 2" onclick="changeMainImage('okacet.png')">
+
+        <!-- Add more images as needed -->
+    </div>
+
+    <div class="main-product">
+        <!-- Main photo of the product -->
+        <img src="okacet.png" alt="Main Product" id="mainProductImage">
+
+        <!-- Product information -->
+        <div class="product-info">
+            <div class="product-details">
+                <h2>Okacet</h2>
+                <p class="product-price"> &#8377;18.50</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Okacet', 'okacet.png', 18.50)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-sidebar">
+        <!-- Product information, use, side effects, and availability -->
+        <h2>Product Information</h2>
+        <p>Use: For cold, and sleeping pills</p>
+        <p>Side Effects: Tiredness, Headache,Sleepiness,Drowsiness,Nausea</p>
+        <p>Availability: In stock</p>
+        <p>Available in: Available in everywhere in india</p>
+        
+        
+    </div>
+</div>
+
+  <div class="product-container">
+  
+    <div class="product-box">
+      <a href="okacet.html">
+      <img class="product-image" src="okacet.png" alt="Product Image">
+      <h3> Okacet</h3>
+      <p> &#8377;18.50</p>
+    </a>
+      <button class="add-to-cart-btn" onclick="addToCart('Okacet', 'okacet.png', 18.50)">Add to Cart</button>
+    </div>
+    
+    <!-- Product 2 -->
+    <div class="product-box">
+      <a href="nicotex.html">
+      <img class="product-image" src="nicotex.png" alt="Product Image">
+      <h3>nicotex</h3>
+      <p> &#8377;129</p></a>
+      <button class="add-to-cart-btn" onclick="addToCart('nicotex', 'nicotex.png', 129)">Add to Cart</button>
+    </div>
+    
+    <div class="product-box">
+      <a href="johansonbaby.html">
+      <img class="product-image" src="jonsoneBaby.png" alt="Product Image">
+      <h3>Jonsone Baby </h3>
+      <p> &#8377;250</p></a>
+      <button class="add-to-cart-btn" onclick="addToCart('Jonsone Baby', 'jonsoneBaby.png',250)">Add to Cart</button>
+    </div>
+    
+    <div class="product-box">
+      <a href="crocin.html">
+      <img class="product-image" src="crocin.jpg" alt="Product Image">
+      <h3>Crocin Advance </h3>
+      <p> &#8377;100</p></a>
+      <button class="add-to-cart-btn" onclick="addToCart('Crocin Advance', 'crocin.jpg', 100)">Add to Cart</button>
+    </div>
+    
+    <div class="product-box">
+      <a href="zandu_bamb.html">
+      <img class="product-image" src="zandubamb.png" alt="Product Image">
+      <h3>Zandu Bamb</h3>
+      <p> &#8377;99</p></a>
+      <button class="add-to-cart-btn" onclick="addToCart('Zandu Bamb', 'zandubamb.png', 99)">Add to Cart</button>
+    </div>
+    
+    <div class="product-box">
+      <a href="wishper.html">
+      <img class="product-image" src="whisperpink.png" alt="Product Image">
+      <h3>Whisper Ultra</h3>
+      <p> &#8377;329</p></a>
+      <button class="add-to-cart-btn" onclick="addToCart('whisperpink Ultra', 'whisperpink.png', 329)">Add to Cart</button>
+    
+    </div>
+     
+    <div class="product-box">
+      <a href="Huggies.html">
+      <img class="product-image" src="huggies.png" alt="Product Image">
+      <h3>Huggies Diaper</h3>
+      <p> &#8377;189.05</p></a>
+      <button class="add-to-cart-btn" onclick="addToCart('Huggies Diaper', 'huggies.png', 189.05)">Add to Cart</button>
+    </div>
+    
+    <div class="product-box">
+      <a href="bp_monitor.html">
+      <img class="product-image" src="bp_monitor.jpg" alt="Product Image">
+      <h3>Bp monitor Device</h3>
+      <p> &#8377;999</p></a>
+      <button class="add-to-cart-btn" onclick="addToCart('Bp monitor Device', 'bp_monitor.jpg',999)">Add to Cart</button>
+    </div>
+     
+    <div class="product-box">
+      <a href="Rsyringe.html">
+      <img class="product-image" src="dispo_van.jpg" alt="Product Image">
+      <h3>DISPO Van Syringes 2ML</h3>
+      <p> &#8377;373</p></a>
+      <button class="add-to-cart-btn" onclick="addToCart('dispo_van.jpg ', 'romsons_romo_jet_syringe.jpg', 373)">Add to Cart</button>
+    </div>
+    
+    <div class="product-box">
+      <a href="vaslineCare.html">
+      <img class="product-image" src="vesline_care.png" alt="Product Image">
+      <h3>vasline care</h3>
+      <p> &#8377;230</p></a>
+      <button class="add-to-cart-btn" onclick="addToCart('vasline care', 'vesline_care.png', 230)">Add to Cart</button>
+    </div>
+    
+    <div class="product-box">
+      <a href="NiveaLotion.html">
+      <img class="product-image" src="Nivea_Lostion.png" alt="Product Image">
+      <h3>Nivea Lotion</h3>
+      <p> &#8377;344</p></a>
+      <button class="add-to-cart-btn" onclick="addToCart('Nivea Lotion', 'Nivea_Lostion.png', 344)">Add to Cart</button>
+    </div>
+    
+    <!-- Product 2 -->
+    <div class="product-box">
+      <a href="Classicshake.html">
+      <img class="product-image" src="musclexp_classic.jpg" alt="Product Image">
+      <h3>Musclexp Classic Shake</h3>
+      <p> &#8377;899</p></a>
+      <button class="add-to-cart-btn" onclick="addToCart('Musclexp Classic Shake', 'musclexp_classic.jpg', 899)">Add to Cart</button>
+    </div>
+    
+
+
+    <script>
+        function changeMainImage(imageSrc) {
+            var mainProductImage = document.getElementById('mainProductImage');
+            mainProductImage.src = imageSrc;
+        }
+
+/* add to cart*/
+const cartSymbol = document.querySelector('.cart-symbol');
+const sidebar = document.querySelector('.sidebar');
+const cartItemsContainer = document.getElementById('cart-items');
+const cartdetailsContainer = document.getElementById('.cart-item-details');
+const totalPriceElement = document.getElementById('total-price');
+const closeCartBtn = document.querySelector('.close-cart-btn');
+const addToCartSections = document.querySelectorAll('.add-to-cart-section');
+const cart = [];
+
+cartSymbol.addEventListener('click', () => {
+  sidebar.classList.toggle('open');
+
+  // Toggle visibility of Add to Cart sections when opening/closing the cart
+  addToCartSections.forEach(section => {
+    section.style.display = sidebar.classList.contains('open') ? 'block' : 'none';
+  });
+
+  // Adjust the right value based on the condition
+  const currentRightValue = parseInt(getComputedStyle(sidebar).right);
+  if (currentRightValue < 0) {
+    sidebar.style.right = "0";
+  } else {
+    sidebar.style.right = "-350px";
+  }
+});
+
+function addToCart(name, image, price) {
+  const product = {
+    name: name,
+    image: image,
+    price: price,
+    quantity: 1
+  };
+
+  // Check if the product is already in the cart
+  const existingProduct = cart.find(item => item.name === name);
+  if (existingProduct) {
+    existingProduct.quantity++;
+  } else {
+    cart.push(product);
+  }
+ 
+  updateCartDisplay();
+}
+
+
+function updateCartDisplay() {
+  cartItemsContainer.innerHTML = '';
+  let total = 0;
+
+  cart.forEach((item, index) => {
+      const cartItem = document.createElement('div');
+      cartItem.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <p>${item.name}</p>
+          <p>&#8377;${item.price.toFixed(2)} </p>
+          <p>Quantity: 
+          <button class="quantity-btn" onclick="decreaseQuantity(${index})">-</button>
+          ${item.quantity}
+          <button class="quantity-btn" onclick="increaseQuantity(${index})">+</button>
+          </p>
+          <button class="remove-from-cart-btn" onclick="removeFromCart(${index})">Remove</button>
+      `;
+      cartItemsContainer.appendChild(cartItem);
+
+      total += item.price * item.quantity;
+  });
+
+  const cartCountElement = document.getElementById('cart-count');
+   cartCountElement.textContent = cart.reduce((count, item) => count + item.quantity, 0).toString();
+
+  totalPriceElement.textContent = `Total:  ${total.toFixed(2)} Rs`;
+}
+
+function decreaseQuantity(index) {
+// Decrease the quantity of the item at the specified index
+if (cart[index].quantity > 1) {
+    cart[index].quantity--;
+    // Update the cart display
+    updateCartDisplay();
+}
+}
+
+function increaseQuantity(index) {
+// Increase the quantity of the item at the specified index
+cart[index].quantity++;
+// Update the cart display
+updateCartDisplay();
+}
+
+function removeFromCart(index) {
+  // Remove the item at the specified index from the cart array
+  cart.splice(index, 1);
+  // Update the cart display
+  updateCartDisplay();
+}
+
+function closeCart() {
+  sidebar.classList.remove('open');
+
+  // Adjust the right value based on the condition
+  const currentRightValue = parseInt(getComputedStyle(sidebar).right);
+  if (currentRightValue < 0) {
+    sidebar.style.right = "0";
+  } else {
+    sidebar.style.right = "-550px";
+  }
+}
+</script>  
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+<script src="Script.js">
+    
+
+
+</script>
+
+</body>
+</html>

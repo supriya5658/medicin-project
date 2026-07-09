@@ -1,0 +1,74 @@
+/*
+let menu = document.querySelector('#menu');
+let listItem = document.querySelector('#list-item');
+
+menu.onclick = () =>{
+    listItem.classList.toggle('nav-active');
+}
+
+function cart() {
+    let cart = document.querySelectorAll('.cart');
+    let remove = document.querySelector('.close');
+    let navOrder = document.querySelector('.nav-order-now');
+
+    cart.forEach((button) => {
+        button.onclick = () =>{
+            navOrder.classList.add('order-active');
+        }
+    })
+
+    remove.onclick = () =>{
+        navOrder.classList.remove('order-active');
+    }
+}
+
+
+const searchBox = document.querySelector('.search-box');
+const searchBtn = document.querySelector('.search-btn');
+const search = document.querySelector('.search');
+const closeBtn = document.querySelector('.close-btn');
+
+searchBtn.addEventListener('click', function(){
+  console.log(search.classList.contains('active'));
+  if(search.classList.contains('active')){
+    searchBox.value = ''
+  }
+  else {
+    search.classList.add('active');
+    searchBox.focus();
+  }
+})
+
+closeBtn.addEventListener('click', function(){
+  search.classList.remove('active');
+  searchBox.value = '';
+})  */
+
+
+function closePopup(popupId) {
+  document.getElementById(popupId).style.display = 'none';
+}
+
+document.querySelector('.login-label').addEventListener('click', function () {
+  document.getElementById('loginPopup').style.display = 'block';
+});
+
+
+function openPopup(popupId) {
+  document.getElementById(popupId).style.display = 'block';
+}
+
+function closePopup(popupId) {
+  document.getElementById(popupId).style.display = 'none';
+}
+
+document.querySelector('.login-label').addEventListener('click', function () {
+  openPopup('loginPopup');
+});
+
+document.querySelector('.signup-link a').addEventListener('click', function () {
+  closePopup('loginPopup');
+  openPopup('signupPopup');
+});
+
+

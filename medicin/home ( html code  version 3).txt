@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food delivery web App</title>
+
+    <!-- box icon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-dT8Cd3s+LzVhmyS/RdSwtsxC2wBgqACaBjVMNc0eHk3XByoz1Y8UihbAjpF2orir" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="medhome.css">
+
+</head>
+<body>
+    <!-- Header section -->
+    <header class="header">
+         <!-- navigation bar -->
+    <nav class="navbar">
+        <img class="logo" src="logoBlack.png" alt="logo-image">
+        <ul class="nav-list" id="list-item">
+            
+            
+            <li class="nav-link"><a href="#" class="active">Home</a></li>
+            <li class="nav-link"><a href="#">History</a></li>
+            <li class="nav-link"><a href="#">Contact</a></li>
+            
+            
+            <button class="nav-btn cart list-btn btn" onclick="cart()"><i class='bx bxs-cart-alt'></i></button>
+            <label for="show" class="login-label">Login</label>  
+        </ul>
+        <div class="nav-btn-section">
+            <button class="nav-btn cart btn" onclick="cart()"><i class='bx bxs-cart-alt'></i></button>
+            <button class="nav-btn hum-burgur-menu btn" id="menu"><i class='bx bx-menu'></i></button>
+        </div>
+        
+
+       
+
+        <!-- ......................Login form .......................-->
+<div class="popup" id="loginPopup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('loginPopup')">&times;</span>
+        <h2>Login Form</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <p class="signup-link">Don't have an account? <a  onclick="openPopup('signupPopup')">Sign up</a></p>
+        </form>
+    </div>
+</div>
+<!-- ............................Sign up Form .........................-->
+
+<div class="popup" id="signupPopup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('signupPopup')">&times;</span>
+        <h2>Sign Up Form</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+            <p class="signup-link"> Do you have an account? <a  onclick="openPopup('loginPopup')">Login </a></p>
+        </form>
+    </div>
+</div>
+    </header>
+    
+
+    <!-- Home container -->
+    
+    <section class="home home-container">
+        <div class="home-left-col">
+            <div class="home-text">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <button class="search-btn"><i class='bx bx-search'></i></button>
+                </div>
+                <h1>Ever </h1>
+                <h2><span class="home-span">Ready</span></h2><h3> Meds </h3> 
+                <p class="text">Quality Healthcare,Delivered to Your Doorstep -  Your Online Medical Service Partner.</p>
+                <a href="#" class="btn">Place an Order</a>
+            </div>
+            
+            
+        </div>       
+           
+         
+        <div class="home-right-col">
+            <img src="pic011.png" alt="home-image">
+        </div>
+    </section>
+
+    <!-- Shop categerious section -->
+   <div class="tag"> Shop By Categerious</div>
+   <div class="swiper-container">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image">
+              <img src="PersonalCare.jpg" alt="Card Image">
+            </div>
+            <h3> Personal Care </h3>
+            
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image">
+              <img src="BabyProduct.jpeg" alt="Card Image">
+            </div>
+            <h3> Baby Products</h3>
+            
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image">
+              <img src="WomenHealth.jpg" alt="Card Image">
+            </div>
+            <h3> Women Health </h3>
+           
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image">
+              <img src="Sports.jpg" alt="Card Image">
+            </div>
+            <h3> Sport And Fitness</h3>
+            
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image">
+              <img src="SkinCare.png" alt="Card Image">
+            </div>
+            <h3>Skin Care</h3>
+         
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image">
+              <img src="CommanMeds  .png" alt="Card Image">
+            </div>
+            <h3>General Medicines </h3>
+        
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image">
+              <img src="assets/images/3. ian-dooley-d1UPkiFd04A-unsplash.jpg" alt="Card Image">
+            </div>
+            <h3>Ian Dooley</h3>
+           
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card">
+            <div class="image">
+              <img src="assets/images/4. rafaella-mendes-diniz-et_78QkMMQs-unsplash.jpg" alt="Card Image">
+            </div>
+            <h3>Rafaella Mendes</h3>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+
+    <!-- custom Script file -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="Script.js">
+        
+
+
+  </script>
+  
+</body>
+</html>

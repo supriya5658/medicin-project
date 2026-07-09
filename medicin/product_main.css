@@ -1,0 +1,598 @@
+* {
+    
+    margin:0;
+    font-family: Arial;
+    border: border-box;
+  
+  }
+  
+  html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  p {
+    color: #546285;
+    font-size: 18px;
+  }
+  /** nav bar **/
+  .navbar {
+    height:60px;
+    background-color: #fff;
+    color:white;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+   
+    
+  }
+  
+  
+  .btn {
+    background-color: #1547DF;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  /**box1 **/
+  .nav-logo {
+    height:70px;
+    width:200px;
+  }
+  .logo {
+    background-image: url("logoBlack.png");
+    background-size: cover;
+    height:60px;
+    width:100%;    
+  }
+  
+  .border {
+    border: 1.5px solid transparent;
+  }
+  
+  .border:hover {
+    border: 1.5px solid white;
+  
+  }
+  
+  /** box2 **/
+  
+  .add-first {
+    color:#cccccc;
+    font-size:1rem;
+    margin-left:15px;
+    
+  }
+  
+  .add-second {
+    font-size: 1rem;
+    margin-left:15px;
+    margin-right:10px;
+    text-align: center;
+    
+  }
+  .add-icon {
+    display:flex;
+    margin-left:20px;
+    margin-right: 5px;
+    align-items:center;
+  }
+  
+  /** box3 **/
+  .nav-search {
+    display:flex;
+    border: #000;
+    justify-content: center;
+    background-color:#2a8bea ;
+    width:420px;
+    height:40px;
+    border-radius:4px;
+    margin-right:10px;
+    margin-left: 10px;
+    margin-top: 9px;
+  
+  }
+  .search-select {
+    background-color: #f3f3f3;
+    width:10px;
+    text-align:center;
+    border-top-left-radius:4px ;
+    border-bottom-left-radius:4px ;
+    border:none;
+    
+  }
+  
+  .search-input {
+    width:100%;
+    font-size: 1rem;
+    border:none;
+    margin-right: 10px;
+  
+  }
+  
+  .search-icon {
+    width:35px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:1.2rem;
+    background-color:#2a8bea;
+    border-top-right-radius:4px ;
+    border-bottom-right-radius:4px ;
+    box-shadow: 5px 5px 10px gray;
+    color:#0f1111 ;
+  }
+  
+  .nav-search:hover {
+    border:2px solid orange;
+  }
+  
+  /** box 4**/
+  
+  span {
+    font-size: 0.7rem;
+  
+  }
+  /** box5 **/
+  .nav-second {
+    font-size:0.85rem;
+    font-weight: 700;
+  }
+  
+  /** box 6**/
+  .nav-cart i {
+    font-size:30px
+  
+  }
+  .nav-cart {
+    font-size:18px;
+    font-weight: 400;
+  }
+  .navbar .nav-link{
+    display: inline-block;
+    list-style: none;
+    margin-top: 9px;
+  }
+  
+  
+  .navbar .nav-link a {
+    padding: 5px;
+    font-size: 16px;
+    color: #646464;
+    margin: 0 10px;
+    transition: .3s linear;
+  }
+  
+  .navbar .nav-link a:hover {
+    color: #000;
+  }
+  
+  .navbar .nav-link a.active {
+    color: #1547DF;
+  }
+  
+  .nav-btn {
+    padding: 15px;
+    border-radius: 3px;
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .nav-btn i {
+    font-size: 25px;
+    color: #fff;
+  }
+  
+  .cart::before {
+    content: '0';
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+    line-height: 25px;
+    background-color: #fff;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    border-radius: 50%;
+    box-shadow: 7px 7px 25px 0 rgba(126, 130, 143, 0.27);
+    color: #fff;
+  }
+  /* CSS for the cart symbol */
+  .cart-symbol {
+    margin-left:5px;
+    margin-top: 19px;
+    top: 10px;
+    right: 0px;
+    width: 60px; /* Increase the width and height for a larger cart symbol */
+    height: 60px;
+    background-color: #2a8bea;
+    color: #fff;
+    border-radius: 10%;
+    text-align: center;
+    line-height: 60px; /* Adjust line-height to vertically center the symbol */
+     box-shadow: 5px 5px 10 px gray;
+    font-size: 30px; /* Increase the font size for a larger cart symbol */
+  }
+  .cart-symbol i{
+    margin-top: 10px;
+    margin-right: 15px;
+  }
+  .cart-symbol span {
+    font-size: 15px;
+    background-color: orange;
+    color: #000;
+    border-radius: 2rem;
+    margin-left: 40px;
+  
+  }
+  /* CSS for the sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    align-items: center;
+    right: -800px;
+    width: 500px;
+    height: 100%; 
+    background: linear-gradient(to right, #7EE8FA, #EEC0C6);
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+    color: #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow-y: auto; 
+  }
+  
+  .sidebar h2{
+      margin-left: 30%;
+  }
+  /* CSS to show the sidebar when it's open */
+  .sidebar.open {
+    right: 0;
+  }
+  #cart-items {
+    display:inline-block ;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+
+
+/* Style for the product image */
+#cart-items img {
+    width: 90px; /* Set your desired width */
+    height: 70px; /* Set your desired height */
+    margin-right: 10px;
+}
+  
+ /* Style for the product details (name, price, quantity) */
+        #cart-items-p {
+            flex-grow: 3;
+            display: inline;
+            
+          
+            margin: 0;
+        }
+        .cart-buttons {
+          display: flex;
+          justify-content: space-between;
+          margin-right: 5px;
+          margin-top: 10px; /* Add margin above the buttons */
+        }
+
+        
+        .total-price {
+          width: 100%; /* Set the desired width */
+          padding: 10px; /* Set padding for better appearance */
+          margin-top: 10px; /* Adjust the margin as needed */
+          background-color: #28282B; /* Add your desired background color */
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          text-align: center;
+        }
+        .close-cart-btn,
+        .checkout-btn {
+          width: 100%; /* Set the desired width */
+          padding: 10px; /* Set padding for better appearance */
+          margin-top: 10px; /* Adjust the margin as needed */
+          background-color: #28282B; /* Add your desired background color */
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          text-align: center;
+          margin-left: 10px;
+        }
+        .close-cart-btn {
+          width: 100%; /* Set the desired width */
+          padding: 10px; /* Set padding for better appearance */
+          margin-top: 10px; /* Adjust the margin as needed */
+          background-color: #28282B; /* Add your desired background color */
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          text-align: center;
+        }
+        /* Additional styling for better appearance */
+        .close-cart-btn:hover,
+        .checkout-btn:hover {
+          background-color: blue; /* Darken the background color on hover */
+        }    
+
+  .nav-btn-section {
+    display: none;
+  
+  }
+  
+  .nav-btn-section .hum-burgur-menu {
+    margin-left: 15px;
+    background: #7e828f1a;
+   
+  }
+  
+  .nav-btn-section .hum-burgur-menu i {
+    color: #000;
+    margin-top: 20px;
+  }
+  
+  
+  
+  /* Adjust the styles based on your design preferences */
+  
+  
+  
+  
+  /* Adjust the styles based on your design preferences */
+  
+  
+  /*login section    */
+  
+  .login-label {
+    background: #2a8bea;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10rem;
+    margin-left:15px;
+    box-shadow: 4px 4px 9px gray;
+    display: inline-block;
+    border-radius: 5rem;
+    margin-top: 9px;
+    
+  }
+  /*  Form  */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(to bottom,  #5fbdff, #2a8bea); /* Gradient from light blue to dark blue */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    z-index: 1;
+  }
+  
+  .popup-content {
+    padding: 20px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  h2 {
+    color: #333;
+   
+  }
+  
+  /* Stylish form styles */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 10px gray;
+  }
+  
+  button.btn {
+    background-color:  #2a8bea;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px grey;
+  }
+  
+  button.btn:hover {
+    background-color: #2a8bea;
+  }
+  
+  /*  Sign in   */
+  /* Add this style for the signup link */
+  .signup-link {
+    margin-top: 10px;
+    color: #000;
+    text-align: center;
+  }
+  
+  .signup-link a {
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .signup-link a:hover {
+    color: #fff;
+  }
+  
+  
+  /* product cart*/
+  .container {
+    display: flex;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.product-images {
+    flex: 1;
+    
+    overflow: hidden;
+}
+
+.product-images img {
+    max-width: 40%; /* Set maximum width for the product angle images */
+    height: auto; /* Maintain aspect ratio */
+   
+}
+
+.main-product {
+    flex: 1;
+    padding: 0 20px;
+    
+    
+    border: 2px solid #ccc; /* Add border to the main product image */
+}
+
+.main-product img {
+  width: 300px;
+  height: 290px;
+  object-fit: cover;
+  margin-top: 10px;
+  margin-left: 60px;
+}
+
+.product-info {
+    display: flex;
+    margin-left: 90px;
+    justify-content: space-between;
+    margin-top: 20px;
+
+}
+
+.product-details {
+    flex: 2;
+    margin-left: 50px;
+}
+
+.product-details h2 {
+    color: #333;
+}
+
+.product-price {
+    color: green;
+    font-weight: bold;
+}
+
+.product-sidebar {
+    flex: 1;
+    padding: 0 20px;
+}
+.product-sidebar p {
+ margin-top: 15px;
+}
+
+ /* product */
+
+.product-container {
+display: flex;
+flex-wrap: wrap;
+gap: 45px;
+justify-content: center;
+background: linear-gradient(to bottom, #87CEEB 30%, #fff 40%,#fff 50%,#5fbdff 70%,#fff 90%);
+
+color:#000
+}
+
+.product-box {
+border: 1px solid #ccc;
+border-radius: 20px;
+overflow: hidden;
+width: 240px;
+height: 340px;
+text-align: center;
+margin-top: 110px;
+background-color: #fff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: box-shadow 0.3s;
+margin-bottom: 15px;
+}
+
+.product-box:hover {
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.product-image {
+width: 200px;
+height: 190px;
+object-fit: cover;
+margin-top: 10px;
+}
+
+/* CSS for Add to Cart button */
+.add-to-cart-btn {
+background-color: #4caf50;
+color: #fff;
+padding: 8px 16px;
+margin-bottom: 10px;
+
+border: none;
+cursor: pointer;
+margin-top: 25px;
+}
+/* CSS for product list */
+
+.product-box h3{
+margin-top: 6px;
+color: #000;
+font-size: 15px;
+}
+.product-box p{
+color: #000;
+display: flex;
+margin-left: 90px;
+margin-top: 15px;
+
+}
+
+/* CSS for product image */
+.product img {
+width: 80%;
+height: 130px;
+}
+  
+  
+  

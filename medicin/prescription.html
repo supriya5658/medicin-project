@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=Device-width, initial-scale=0.5">
+   <title>PHARMAX</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="medhome.css"/>
+
+</head>
+<style>
+    * {
+    
+    margin:0;
+    font-family: Arial;
+    border: border-box;
+  
+  }
+  
+  html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  p {
+    color: #546285;
+    font-size: 18px;
+  }
+  /** nav bar **/
+  .navbar {
+    height:60px;
+    background-color: #fff;
+    color:white;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+   
+    
+  }
+  
+  
+  .btn {
+    background-color: #1547DF;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  /**box1 **/
+  .nav-logo {
+    height:70px;
+    width:200px;
+  }
+  .logo {
+    background-image: url("logoBlack.png");
+    background-size: cover;
+    height:60px;
+    width:100%;    
+  }
+  
+  .border {
+    border: 1.5px solid transparent;
+  }
+  
+  .border:hover {
+    border: 1.5px solid white;
+  
+  }
+  
+  /** box2 **/
+  
+  .add-first {
+    color:#cccccc;
+    font-size:1rem;
+    margin-left:15px;
+    
+  }
+  
+  .add-second {
+    font-size: 1rem;
+    margin-left:15px;
+    margin-right:10px;
+    text-align: center;
+    
+  }
+  .add-icon {
+    display:flex;
+    margin-left:20px;
+    margin-right: 5px;
+    align-items:center;
+  }
+  
+  /** box3 **/
+  .nav-search {
+    display:flex;
+    border: #000;
+    justify-content: center;
+    background-color:#2a8bea ;
+    width:420px;
+    height:40px;
+    border-radius:4px;
+    margin-right:10px;
+    margin-left: 10px;
+    margin-top: 9px;
+  
+  }
+  .search-select {
+    background-color: #f3f3f3;
+    width:10px;
+    text-align:center;
+    border-top-left-radius:4px ;
+    border-bottom-left-radius:4px ;
+    border:none;
+    
+  }
+  
+  .search-input {
+    width:100%;
+    font-size: 1rem;
+    border:none;
+    margin-right: 10px;
+  
+  }
+  
+  .search-icon {
+    width:35px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:1.2rem;
+    background-color:#2a8bea;
+    border-top-right-radius:4px ;
+    border-bottom-right-radius:4px ;
+    box-shadow: 5px 5px 10px gray;
+    color:#0f1111 ;
+  }
+  
+  .nav-search:hover {
+    border:2px solid orange;
+  }
+  
+  /** box 4**/
+  
+  span {
+    font-size: 0.7rem;
+  
+  }
+  /** box5 **/
+  .nav-second {
+    font-size:0.85rem;
+    font-weight: 700;
+  }
+  
+  /** box 6**/
+  .nav-cart i {
+    font-size:30px
+  
+  }
+  .nav-cart {
+    font-size:18px;
+    font-weight: 400;
+  }
+  .navbar .nav-link{
+    display: inline-block;
+    list-style: none;
+    margin-top: 9px;
+  }
+  
+  
+  .navbar .nav-link a {
+    padding: 5px;
+    font-size: 16px;
+    color: #646464;
+    margin: 0 10px;
+    transition: .3s linear;
+  }
+  
+  .navbar .nav-link a:hover {
+    color: #000;
+  }
+  
+  .navbar .nav-link a.active {
+    color: #1547DF;
+  }
+  
+  .nav-btn {
+    padding: 15px;
+    border-radius: 3px;
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .nav-btn i {
+    font-size: 25px;
+    color: #fff;
+  }
+  
+  .cart::before {
+    content: '0';
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    background-color: #fff;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    border-radius: 50%;
+    box-shadow: 7px 7px 25px 0 rgba(126, 130, 143, 0.27);
+    color: #fff;
+  }
+  /* CSS for the cart symbol */
+  .cart-symbol {
+    margin-left:25px;
+    margin-top: 9px;
+    top: 10px;
+    right: 3px;
+    width: 60px; /* Increase the width and height for a larger cart symbol */
+    height: 60px;
+    background-color: #2a8bea;
+    color: #fff;
+    border-radius: 10%;
+    text-align: center;
+    line-height: 60px; /* Adjust line-height to vertically center the symbol */
+     box-shadow: 5px 5px 10 px gray;
+    font-size: 30px; /* Increase the font size for a larger cart symbol */
+  }
+  
+  
+  /* CSS for the sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    align-items: center;
+    right: -500px;
+    width: 300px;
+    height: 100%;
+    background-color: #f1f1f1;
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+    color: #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  .sidebar h2{
+      margin-left: 30%;
+  }
+  /* CSS to show the sidebar when it's open */
+  .sidebar.open {
+    right: 0;
+  }
+  
+  
+  
+  .close-cart-btn {
+    background-color: #ff3333;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    
+    margin-top: 20px;
+    margin-left: 50%;
+  }
+  
+  /* CSS for total price */
+  .total-price {
+    margin-top: 40%;
+    text-align: left;
+    font-weight: bold;
+    margin-left: 50%;
+  }
+  
+  .nav-btn-section {
+    display: none;
+  
+  }
+  
+  .nav-btn-section .hum-burgur-menu {
+    margin-left: 15px;
+    background: #7e828f1a;
+   
+  }
+  
+  .nav-btn-section .hum-burgur-menu i {
+    color: #000;
+    margin-top: 20px;
+  }
+  
+  
+  
+  /* Adjust the styles based on your design preferences */
+  
+  
+  /*login section    */
+  
+  .login-label {
+    background: #2a8bea;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10rem;
+    margin-left:15px;
+    box-shadow: 4px 4px 9px gray;
+    display: inline-block;
+    border-radius: 5rem;
+    margin-top: 9px;
+    
+  }
+  /*  Form  */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(to bottom,  #5fbdff, #2a8bea); /* Gradient from light blue to dark blue */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    z-index: 1;
+  }
+  
+  .popup-content {
+    padding: 20px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  h2 {
+    color: #333;
+   
+  }
+  
+  /* Stylish form styles */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 10px gray;
+  }
+  
+  button.btn {
+    background-color:  #2a8bea;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px grey;
+  }
+  
+  button.btn:hover {
+    background-color: #2a8bea;
+  }
+  
+  /*  Sign in   */
+  /* Add this style for the signup link */
+  .signup-link {
+    margin-top: 10px;
+    color: #000;
+    text-align: center;
+  }
+  
+  .signup-link a {
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .signup-link a:hover {
+    color: #fff;
+  }
+  
+  
+  #slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 60px;
+  }
+  
+  #image-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 300px;
+  }
+  
+  .slide {
+    width: 100%;
+    height: 570px;
+    flex: 0 0 auto;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+
+  h1 {
+    margin-top: 90px;
+    margin-left: 500px;
+  }
+  #upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        #upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        #upload-btn-wrapper .btn {
+            border: 2px solid gray;
+            color: #fff;
+            background-color: #2a8bea;
+            margin-top: 40px;
+            margin-left: 550px;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+        #upload-btn-wrapper .btn :hover{
+            color: #1547DF;
+
+        }
+        #image-preview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .preview-container {
+            margin: 10px;
+            text-align: center;
+        }
+
+        .preview-image {
+            max-width: 200px;
+            max-height: 200px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .upload{
+            height: 400px;
+            width: 350px;
+            margin-left: 470px;
+            margin-bottom: 30px;
+           
+        }
+        .delete-button {
+            color: #fff;
+            background-color: red;
+            padding: 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: absolute;
+            
+        }
+        #error-message {
+            top: 5px;
+            right: 5px;
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        
+/** footer **/
+
+
+
+.foot-panel2 {
+    background-color: #2a8bea;
+    color:white;
+    height:300px;
+    display:flex;
+    justify-content: space-evenly;
+   
+
+}
+
+ul {
+    margin-top: 18px;
+}
+
+ul a {
+    display:block;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color:#dddddd;
+}
+
+ul p {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.foot-panel3 {
+    background-color:#000 ;
+    color:white;
+    border-top:0.5px solid  white;
+    height:70px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo2 {
+    background-image: url("logoWhite.png");
+    background-size: cover;
+    height:80px;
+    width:200px;
+       
+}
+
+.foot-panel4 {
+    background-color: #0f1111;
+    color:white;
+    height: 100px;
+    font-size: 0.7rem;
+    text-align: center;
+   /** display:flex;
+    justify-content: center;
+    align-items: center;**/
+}
+
+.pages {
+    
+    padding-top: 25px;
+}
+
+.copyright {
+    padding-top:5px ;
+    
+}
+
+  
+</style>
+<body>
+   <header>
+      <!--Navbar start-->
+      <div class="navbar ">
+         <div class="nav-logo border">
+            <div class="logo"></div>
+         </div>
+          
+
+         <div class="nav-search">
+            
+            <input placeholder="Search Meds" class="search-input">
+            <div class="search-icon">
+               <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+         </div>   
+          
+         <li class="nav-link"><a href="home.html" >Home</a></li>
+         <li class="nav-link"><a href="#">History</a></li>
+         <li class="nav-link"><a  class="active">Perscription</a></li>
+         
+     
+         
+         <label for="show" class="login-label">Login</label>  
+         <button class="cart-symbol" > <i class="fa-solid fa-cart-shopping"></i></button>
+      
+           
+         </div>
+         <!--navbar end-->
+          <!-- ................        Add to cart section     ..................-->
+        
+        <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Shopping Cart</h2>
+    <div id="cart-items"></div>
+    <div class="total-price" id="total-price">Total: 0.00 Rs</div>
+    <button class="close-cart-btn" onclick="closeCart()">Close Cart</button>
+  </div>
+
+        <!-- ......................Login form .......................-->
+<div class="popup" id="loginPopup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('loginPopup')">&times;</span>
+        <h2>Login Form</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <p class="signup-link">Don't have an account? <a  onclick="openPopup('signupPopup')">Sign up</a></p>
+        </form>
+    </div>
+</div>
+<!-- ............................Sign up Form .........................-->
+
+<div class="popup" id="signupPopup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('signupPopup')">&times;</span>
+        <h2>Sign Up Form</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+            <p class="signup-link"> Do you have an account? <a  onclick="openPopup('loginPopup')">Login </a></p>
+        </form>
+    </div>
+</div>
+
+</header>
+
+
+<h1>Upload Prescription</h1>
+
+    <div id="upload-btn-wrapper">
+        <button class="btn">Upload Prescription</button>
+        <input type="file" name="prescription" id="upload-prescription" accept="image/*" capture="camera" multiple>
+    </div>
+    
+    <div id="error-message"></div>
+    <div id="image-preview"></div>
+
+    <div class="upload">
+        <img src="upload.png" alt="image">
+    </div>
+    
+<!--footer start-->
+<footer>
+ 
+  <div class="foot-panel2 ">
+     <ul>
+        <p>About Us</p>
+        <a>Provide 24/7 Service</a>
+        <a>Press Releases</a>
+        <a>Amazon Science</a>
+
+     </ul>
+     <ul>
+        <p>Connect with Us</p>
+        <a> Facebook</a>
+        <a> Twitter</a>
+        <a>Instagram</a>
+        
+     </ul>
+     <ul>
+        <p>Make Money with Us</p>
+        <a> Sell on Amazon</a>
+        <a>Sell under Amazon Accelerator</a>
+        <a>Protect and Build Your Brand</a>
+        <a>Amazon Global Selling</a>
+        <a>Become an Affiliate</a>
+        <a> Fulfilment by Amazon</a>
+        <a>Advertise Your Products</a>
+        <a> Amazon Pay on Merchants</a>
+
+     </ul>
+     <ul>
+        <p>Let Us Help You</p>
+        <a>COVID-19 and Amazon</a>
+        <a>Your Account</a>
+        <a>Returns Centre</a>
+        <a>100% Purchase Protection</a>
+        <a> Amazon App Download</a>
+        <a> Help</a>
+
+     </ul>
+  </div>
+
+  <div class="foot-panel3 ">
+     <div class="logo2 border"></div>
+  </div>
+  <div class="foot-panel4">
+     <div class="pages border">
+        <a>Conditions of Use</a>
+        <a>Privacy Notice</a>
+         <a>Your Ads Privacy Choices </a>
+
+     </div>
+     <div class="copyright border">
+        © 1996-2023, Amazon.com, Inc. or its affiliates
+     </div>
+  </div>
+</footer>
+<!--footer end-->
+
+<!-- custom Script file -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+<script src="Preccript.js">
+    
+    
+
+
+</script>
+
+</body>
+</html>
+
+
+  
+  

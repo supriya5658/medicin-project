@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="pract.css">
+    <style>
+        /* Additional CSS for popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+            z-index: 9999;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9998;
+        }
+      
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <form id="checkout-form">
+
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">billing address</h3>
+
+                <div class="inputBox">
+                    <span>full name :</span>
+                    <input type="text" id="fullname" placeholder="john deo">
+                </div>
+                <div class="inputBox">
+                    <span>email :</span>
+                    <input type="email" id="email" placeholder="example@example.com">
+                </div>
+                <div class="inputBox">
+                    <span>address :</span>
+                    <input type="text" id="address" placeholder="room - street - locality">
+                </div>
+                <div class="inputBox">
+                    <span>city :</span>
+                    <input type="text" id="city" placeholder="mumbai">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>state :</span>
+                        <input type="text" id="state" placeholder="india">
+                    </div>
+                    <div class="inputBox">
+                        <span>zip code :</span>
+                        <input type="text" id="zipcode" placeholder="123 456">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <h3 class="title">payment</h3>
+
+                <div class="inputBox">
+                    <span>QR code for payment :</span>
+                    <img src="scanner.jpeg" alt="">
+                </div>
+               
+
+                <div class="flex">
+                    
+                    <div class="inputBox">
+                        <span>Total Price:</span>
+                        <input type="number" id="cvv" placeholder="1234">
+                    </div>
+                </div>
+
+            </div>
+    
+        </div>
+
+        <input type="submit" value="proceed to checkout" class="submit-btn" id="proceed-btn" disabled>
+
+    </form>
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <p>Thank you for your order! Your purchase has been successfully processed.</p>
+    </div>
+</div>    
+
+<script>
+   // Get the checkout form and popup elements
+   const checkoutForm = document.getElementById('checkout-form');
+    const overlay = document.getElementById('overlay');
+    const popup = document.getElementById('popup');
+    const proceedButton = document.getElementById('proceed-btn');
+
+    // Event listener for form submission
+    checkoutForm.addEventListener('submit', function(event) {
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Display the "Are you sure?" confirmation message
+        if (confirm('Are you sure you want to proceed to checkout?')) {
+            // Display the popup
+            overlay.style.display = 'block';
+            popup.style.display = 'block';
+
+            // Optionally, you can reset the form fields after a delay
+            // setTimeout(() => {
+            //     checkoutForm.reset();
+            // }, 3000);
+
+            // Redirect to the homepage after 3 seconds
+            setTimeout(function() {
+                window.location.href = 'home.html'; // Replace 'your-homepage-url.html' with your actual homepage URL
+            }, 1000); // Change the delay time as needed (in milliseconds)
+        }
+    });
+
+// Close the popup when clicking on the overlay
+overlay.addEventListener('click', function() {
+    overlay.style.display = 'none';
+    popup.style.display = 'none';
+});
+
+// Event listener for input fields
+checkoutForm.addEventListener('input', function() {
+    // Check if all fields have values
+    const fullname = document.getElementById('fullname').value;
+    const email = document.getElementById('email').value;
+    const address = document.getElementById('address').value;
+    const city = document.getElementById('city').value;
+    const state = document.getElementById('state').value;
+    const zipcode = document.getElementById('zipcode').value;
+    
+    const cvv = document.getElementById('cvv').value;
+
+    if (fullname && email && address && city && state && zipcode &&  cvv) {
+        proceedButton.disabled = false;
+    } else {
+        proceedButton.disabled = true;
+    }
+});
+</script>
+</body>
+</html>
